@@ -1,12 +1,9 @@
-use crate::console::read_line;
-
-mod console;
-mod errors;
+use console::read_line;
 
 fn main() {
     match read_line() {
         Ok(line) => {
-            println!("{}", line);
+            println!("Input is: [{}]", line);
         }
         Err(error) => {
             eprintln!("{:?}", error);

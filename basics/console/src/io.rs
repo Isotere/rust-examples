@@ -4,7 +4,7 @@ pub fn read_line() -> Result<String, MyCustomError> {
     let mut input = String::new();
 
     match std::io::stdin().read_line(&mut input) {
-        Ok(_) => Ok(input),
+        Ok(_) => Ok(input.trim_end().to_string()),
         Err(error) => Err(MyCustomError::ConsoleReadError(error.to_string())),
     }
 }
