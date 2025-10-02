@@ -1,4 +1,4 @@
-use authentication::login;
+use authentication::{login, LoginAction, LoginRole};
 use console::read_line;
 
 fn main() {
@@ -9,16 +9,22 @@ fn main() {
         println!("Enter your password: ");
         let password = read_line().unwrap();
 
-        if login(&username, &password) {
-            println!("Logged in successfully");
-            break;
-        }
+        match login(&username, &password) {
+            Some(LoginAction::Granted(LoginRole::Admin)) => println!("You are logged in as admin!"),
+            Some(LoginAction::Granted(LoginRole::User)) => println!("You are logged in as user!"),
+            Some(LoginAction::Denied) => {
+                println!("Invalid username or password");
+                tries += 1;
+                if tries < 3 {
+                    continue;
+                }
 
-        println!("Invalid username or password");
-        tries += 1;
-        if tries >= 3 {
-            println!("Too many tries");
-            break;
+                println!("Too many tries");
+            }
+            None => {
+                println!("User not found");
+            }
         }
+        break;
     }
 }
