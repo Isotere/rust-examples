@@ -7,7 +7,8 @@ edition = "2024"
 members = [
     "authentication",
     "console",
-    "login"
+    "login",
+    "login_manager",
 ]
 
 [dependencies]

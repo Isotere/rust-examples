@@ -24,13 +24,6 @@ pub fn login(username: &str, password: &str) -> Option<LoginAction> {
     Some(LoginAction::Denied)
 }
 
-// pub fn get_users() -> Vec<User> {
-//     vec![
-//         User::new("admin", "password", LoginRole::Admin),
-//         User::new("user", "u_password", LoginRole::User),
-//     ]
-// }
-
 pub fn get_default_users() -> HashMap<String, User> {
     let mut users = HashMap::new();
     users.insert(
@@ -43,6 +36,13 @@ pub fn get_default_users() -> HashMap<String, User> {
     );
 
     users
+}
+
+pub fn save_users(users: &HashMap<String, User>) {
+    let users_path = Path::new("users.json");
+
+    let users_json = serde_json::to_string_pretty(&users).expect("Failed to serialize users.json");
+    std::fs::write(users_path, users_json).expect("Failed to write users.json");
 }
 
 pub fn get_users() -> HashMap<String, User> {
@@ -62,16 +62,6 @@ pub fn get_users() -> HashMap<String, User> {
 
     users
 }
-
-// pub fn get_admin_users() -> Vec<String> {
-//     let users: Vec<String> = get_users()
-//         .into_iter()
-//         .filter(|e| )
-//         .map(|user| user.username)
-//         .collect();
-//
-//     users
-// }
 
 #[cfg(test)]
 mod tests {
