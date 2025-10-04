@@ -7,6 +7,9 @@ use std::path::Path;
 mod user;
 pub use user::*;
 
+mod hashing;
+pub use hashing::*;
+
 pub fn login(username: &str, password: &str) -> Option<LoginAction> {
     let users = get_users();
 
@@ -14,7 +17,7 @@ pub fn login(username: &str, password: &str) -> Option<LoginAction> {
 
     let user = users.get(&username)?;
 
-    if password == user.password {
+    if hash_password(password) == user.password {
         return Some(LoginAction::Granted(user.role.clone())); // Либо можем использовать into_iter, который делает move из вектора
     }
 
