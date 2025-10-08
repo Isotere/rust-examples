@@ -8,6 +8,8 @@ members = [
     "authentication",
     "concurrency/divide_work",
     "concurrency/hello",
+    "concurrency/scoped_threads",
+    "concurrency/thread_builder",
     "console",
     "login",
     "login_manager",
