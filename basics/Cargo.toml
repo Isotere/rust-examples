@@ -6,6 +6,7 @@ edition = "2024"
 [workspace]
 members = [
     "authentication",
+    "concurrency/divide_work",
     "concurrency/hello",
     "console",
     "login",
