@@ -6,8 +6,11 @@ edition = "2024"
 [workspace]
 members = [
     "authentication",
-    "concurrency/divide_work", "concurrency/footgun",
+    "concurrency/atomics",
+    "concurrency/divide_work",
+    "concurrency/footgun",
     "concurrency/hello",
+    "concurrency/mutexes",
     "concurrency/scoped_threads",
     "concurrency/thread_builder",
     "console",
