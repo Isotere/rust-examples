@@ -7,10 +7,13 @@ edition = "2024"
 members = [
     "authentication",
     "concurrency/atomics",
+    "concurrency/dashing",
     "concurrency/divide_work",
     "concurrency/footgun",
     "concurrency/hello",
     "concurrency/mutexes",
+    "concurrency/parking",
+    "concurrency/rwlocks",
     "concurrency/scoped_threads",
     "concurrency/thread_builder",
     "console",
