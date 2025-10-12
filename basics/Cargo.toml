@@ -15,6 +15,7 @@ members = [
     "concurrency/mutexes",
     "concurrency/parking",
     "concurrency/rayon-iters",
+    "concurrency/rayon-scope",
     "concurrency/rwlocks",
     "concurrency/scoped_threads",
     "concurrency/thread_builder",
