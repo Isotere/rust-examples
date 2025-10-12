@@ -17,6 +17,7 @@ members = [
     "concurrency/rwlocks",
     "concurrency/scoped_threads",
     "concurrency/thread_builder",
+    "concurrency/thread_pool",
     "concurrency/workers",
     "console",
     "login",
