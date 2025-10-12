@@ -1,8 +1,7 @@
 use std::collections::VecDeque;
 use std::sync::{mpsc, LazyLock, Mutex};
 
-static WORK_QUEUE: LazyLock<Mutex<VecDeque<String>>> =
-    LazyLock::new(|| Mutex::new(VecDeque::new()));
+static WORK_QUEUE: LazyLock<Mutex<VecDeque<String>>> = LazyLock::new(|| Mutex::new(VecDeque::new()));
 
 fn main() {
     let cpu_count = num_cpus::get();

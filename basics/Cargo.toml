@@ -1,7 +1,7 @@
-[package]
-name = "basics"
+[workspace.package]
 version = "0.1.0"
 edition = "2024"
+publish = false
 
 [workspace]
 members = [
@@ -14,6 +14,7 @@ members = [
     "concurrency/hello",
     "concurrency/mutexes",
     "concurrency/parking",
+    "concurrency/rayon-iters",
     "concurrency/rwlocks",
     "concurrency/scoped_threads",
     "concurrency/thread_builder",
@@ -23,6 +24,5 @@ members = [
     "login",
     "login_manager",
 ]
+resolver = "3"
 
-[dependencies]
-console = { path = "./console" }
