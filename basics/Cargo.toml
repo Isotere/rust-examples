@@ -6,6 +6,7 @@ publish = false
 [workspace]
 members = [
     "async/hello-async",
+    "async/hello-tokio",
     "authentication",
     "concurrency/atomics",
     "concurrency/channels1",
