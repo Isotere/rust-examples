@@ -5,8 +5,11 @@ publish = false
 
 [workspace]
 members = [
+    "async/blocking",
     "async/hello-async",
     "async/hello-tokio",
+    "async/restclient",
+    "async/tokio_testing",
     "authentication",
     "concurrency/atomics",
     "concurrency/channels1",
