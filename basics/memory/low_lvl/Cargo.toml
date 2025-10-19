@@ -1,0 +1,8 @@
+[package]
+name = "low_lvl"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+libc = "0.2.177"

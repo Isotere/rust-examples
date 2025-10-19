@@ -9,6 +9,8 @@ members = [
     "async/hello-async",
     "async/hello-tokio",
     "async/restclient",
+    "async/thumb_server",
+    "async/tokio_select",
     "async/tokio_testing",
     "authentication",
     "concurrency/atomics",
@@ -29,6 +31,18 @@ members = [
     "console",
     "login",
     "login_manager",
+    "memory/cycles",
+    "memory/dropping",
+    "memory/low_lvl",
+    "project/collector",
+    "project/server",
+    "project/shared_data",
 ]
 resolver = "3"
 
+[profile.release]
+opt-level = "z"
+strip = true # Automatically strip symbols
+lto = true
+codegen-units = 1
+panic = "abort" # Теряем информацию в случае паники, но выигрываем значительно в размере

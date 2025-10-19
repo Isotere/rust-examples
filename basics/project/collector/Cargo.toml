@@ -1,0 +1,18 @@
+[package]
+name = "collector"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+shared_data = { path = "../shared_data" }
+sysinfo = { version = "0.37.2", features = ["apple-app-store"] }
+thiserror = "2.0.17"
+uuid = { version = "1.18.1", features = ["v4"] }
+
+[profile.release]
+opt-level = "z"
+strip = true # Automatically strip symbols
+lto = true
+codegen-units = 1
+panic = "abort" # Теряем информацию в случае паники, но выигрываем значительно в размере
